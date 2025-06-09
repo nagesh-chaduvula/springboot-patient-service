@@ -88,6 +88,24 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!--Below plugin to skip SpringbootPatientServiceApplication class.
+				1. Need to comment //@SpringBootApplication in class: SpringbootPatientServiceApplication
+				2. Need to add below plugin-->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
